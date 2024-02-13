@@ -11,7 +11,7 @@ import java.security.Permission;
 public final class RedbeardEconomy extends JavaPlugin implements CommandExecutor {
 
     private RedbeardEconomy redbeardEconomy;
-    private static Economy econ = null;
+    static Economy econ = null;
     private static final Permission perms = null;
     private static final Chat chat = null;
 
@@ -27,6 +27,8 @@ public final class RedbeardEconomy extends JavaPlugin implements CommandExecutor
         this.saveDefaultConfig();
         this.reloadConfig();
 
+        this.getCommand("treasure").setExecutor((CommandExecutor) new treasureHandler());
+
     }
 
     private boolean setupEconomy() {
@@ -39,10 +41,5 @@ public final class RedbeardEconomy extends JavaPlugin implements CommandExecutor
         }
         econ = rsp.getProvider();
         return true;
-    }
-
-    @Override
-    public void onDisable() {
-        // Plugin shutdown logic
     }
 }
