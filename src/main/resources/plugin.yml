@@ -1,0 +1,12 @@
+name: redbeardEconomy
+version: '${project.version}'
+main: net.serahill.redbeardeconomy.RedbeardEconomy
+api-version: '1.20'
+prefix: RedBeard Economy
+depend: [Vault]
+authors: [Raya Serahill]
+website: https://serahill.net/
+commands:
+  treasure:
+    description: Displays the amount of treasure you have
+    usage: "/treasure"
